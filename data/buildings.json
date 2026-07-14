@@ -1,0 +1,176 @@
+{
+  "billingPeriod": "2026-06",
+  "billingPeriodLabel": "มิถุนายน 2569",
+  "issueDate": "2026-07-01",
+  "dueDate": "2026-07-15",
+  "rateConfig": {
+    "waterRatePerM3": 21.0,
+    "wastewaterRatePerM3": 14.0,
+    "wastewaterFactor": 0.8,
+    "serviceFeePerMonth": 500,
+    "vatRate": 0.07
+  },
+  "buildings": [
+    {
+      "id": "B-01",
+      "company": "บจก. ไทยฟู้ดเบฟ อินดัสทรีส์",
+      "type": "อาหารและเครื่องดื่ม",
+      "zone": "A",
+      "lat": 13.9871,
+      "lng": 100.5573,
+      "meterId": "MTR-1001",
+      "usage": {
+        "todayM3": 178,
+        "monthToDateM3": 2140,
+        "lastMonthM3": 4820,
+        "daily": [162, 170, 168, 175, 181, 158, 149, 172, 176, 180, 174, 169, 171, 178]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-02",
+      "company": "บจก. สยามเท็กซ์ไทล์",
+      "type": "สิ่งทอและฟอกย้อม",
+      "zone": "A",
+      "lat": 13.9856,
+      "lng": 100.5544,
+      "meterId": "MTR-1002",
+      "usage": {
+        "todayM3": 112,
+        "monthToDateM3": 1385,
+        "lastMonthM3": 3150,
+        "daily": [105, 108, 110, 102, 98, 90, 88, 106, 109, 111, 107, 104, 108, 112]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-03",
+      "company": "บจก. เอเชียอิเล็กทรอนิกส์",
+      "type": "อิเล็กทรอนิกส์",
+      "zone": "B",
+      "lat": 13.9838,
+      "lng": 100.5586,
+      "meterId": "MTR-1003",
+      "usage": {
+        "todayM3": 79,
+        "monthToDateM3": 1002,
+        "lastMonthM3": 2280,
+        "daily": [75, 78, 76, 80, 77, 70, 68, 79, 81, 78, 76, 77, 80, 79]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-04",
+      "company": "บจก. กรีนเคม อุตสาหกรรม",
+      "type": "เคมีภัณฑ์",
+      "zone": "B",
+      "lat": 13.9797,
+      "lng": 100.5601,
+      "meterId": "MTR-1004",
+      "usage": {
+        "todayM3": 196,
+        "monthToDateM3": 2430,
+        "lastMonthM3": 5460,
+        "daily": [185, 190, 188, 192, 195, 176, 170, 189, 193, 197, 191, 188, 192, 196]
+      },
+      "billStatus": "pending"
+    },
+    {
+      "id": "B-05",
+      "company": "บจก. ไทยพลาสแพ็ค",
+      "type": "พลาสติกและบรรจุภัณฑ์",
+      "zone": "A",
+      "lat": 13.9824,
+      "lng": 100.5527,
+      "meterId": "MTR-1005",
+      "usage": {
+        "todayM3": 61,
+        "monthToDateM3": 770,
+        "lastMonthM3": 1740,
+        "daily": [58, 60, 59, 62, 61, 55, 52, 60, 63, 61, 59, 60, 62, 61]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-06",
+      "company": "บจก. นวออโต้พาร์ท",
+      "type": "ชิ้นส่วนยานยนต์",
+      "zone": "C",
+      "lat": 13.9789,
+      "lng": 100.5488,
+      "meterId": "MTR-1006",
+      "usage": {
+        "todayM3": 102,
+        "monthToDateM3": 1290,
+        "lastMonthM3": 2910,
+        "daily": [98, 101, 99, 103, 100, 92, 90, 100, 104, 102, 99, 101, 103, 102]
+      },
+      "billStatus": "overdue"
+    },
+    {
+      "id": "B-07",
+      "company": "บจก. ยูเนี่ยนเปเปอร์มิลล์",
+      "type": "กระดาษและเยื่อกระดาษ",
+      "zone": "C",
+      "lat": 13.9765,
+      "lng": 100.5568,
+      "meterId": "MTR-1007",
+      "usage": {
+        "todayM3": 248,
+        "monthToDateM3": 2980,
+        "lastMonthM3": 6120,
+        "daily": [212, 215, 218, 214, 220, 205, 200, 222, 228, 234, 238, 241, 244, 248]
+      },
+      "billStatus": "pending",
+      "note": "AI ตรวจพบการใช้น้ำกลางคืนผิดปกติ อาจมีท่อรั่วภายใน (AN-2605)"
+    },
+    {
+      "id": "B-08",
+      "company": "บจก. เมดิฟาร์ม แลบบอราทอรีส์",
+      "type": "ยาและเวชภัณฑ์",
+      "zone": "A",
+      "lat": 13.9902,
+      "lng": 100.5549,
+      "meterId": "MTR-1008",
+      "usage": {
+        "todayM3": 35,
+        "monthToDateM3": 432,
+        "lastMonthM3": 980,
+        "daily": [32, 34, 33, 35, 34, 30, 29, 34, 36, 35, 33, 34, 35, 35]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-09",
+      "company": "บจก. โคลด์สโตเรจ โลจิสติกส์",
+      "type": "คลังสินค้าห้องเย็น",
+      "zone": "B",
+      "lat": 13.9885,
+      "lng": 100.5615,
+      "meterId": "MTR-1009",
+      "usage": {
+        "todayM3": 47,
+        "monthToDateM3": 585,
+        "lastMonthM3": 1320,
+        "daily": [44, 46, 45, 47, 46, 42, 40, 46, 48, 47, 45, 46, 47, 47]
+      },
+      "billStatus": "paid"
+    },
+    {
+      "id": "B-10",
+      "company": "อาคารสำนักงานกลางเขตอุตสาหกรรม",
+      "type": "สำนักงาน",
+      "zone": "A",
+      "lat": 13.9843,
+      "lng": 100.5557,
+      "meterId": "MTR-1010",
+      "usage": {
+        "todayM3": 22,
+        "monthToDateM3": 285,
+        "lastMonthM3": 640,
+        "daily": [21, 22, 21, 23, 22, 12, 10, 22, 23, 22, 21, 22, 23, 22]
+      },
+      "billStatus": "paid"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+/* ===== Design tokens — dark (ค่าเริ่มต้น) และ light (html[data-theme="light"]) =====
+   เก็บเป็น RGB triplet เพื่อให้ Tailwind ใช้ opacity modifier ได้ (เช่น bg-s1/15) */
+:root {
+  --tw-page: 13 13 13;
+  --tw-surface: 26 26 25;
+  --tw-surface2: 34 34 33;
+  --tw-ink: 255 255 255;
+  --tw-ink2: 195 194 183;
+  --tw-muted: 137 135 129;
+  --tw-grid: 44 44 42;
+  --tw-line: 255 255 255; /* สีเส้นขอบ/เส้นแบ่ง (ใช้คู่กับ opacity) */
+
+  --tw-s1: 57 135 229; /* น้ำเงิน — ระดับน้ำ / ค่าจริง */
+  --tw-s2: 25 158 112; /* เขียวอมฟ้า — คุณภาพน้ำ */
+  --tw-s3: 201 133 0; /* เหลือง — ค่าคาดการณ์ AI */
+  --tw-s5: 144 133 233; /* ม่วง — พลังงาน/อื่นๆ */
+  --tw-good: 12 163 12;
+  --tw-warn: 250 178 25;
+  --tw-serious: 236 131 90;
+  --tw-crit: 208 59 59;
+
+  --page: rgb(var(--tw-page));
+  --surface: rgb(var(--tw-surface));
+  --surface-2: rgb(var(--tw-surface2));
+  --ink: rgb(var(--tw-ink));
+  --ink-2: rgb(var(--tw-ink2));
+  --muted: rgb(var(--tw-muted));
+  --grid: rgb(var(--tw-grid));
+  --baseline: #383835;
+  --border: rgb(var(--tw-line) / 0.1);
+
+  /* Scrollbar: แยก track (พื้นหลัง) กับ thumb (แถบเลื่อน) */
+  --scrollbar-track: var(--page);
+  --scrollbar-thumb: var(--baseline);
+
+  --s1: rgb(var(--tw-s1));
+  --s2: rgb(var(--tw-s2));
+  --s3: rgb(var(--tw-s3));
+  --s5: rgb(var(--tw-s5));
+  --good: rgb(var(--tw-good));
+  --warn: rgb(var(--tw-warn));
+  --serious: rgb(var(--tw-serious));
+  --crit: rgb(var(--tw-crit));
+
+  /* สีข้อความระดับ "เฝ้าระวัง" — เหลืองบนพื้นมืดอ่านได้ แต่บนพื้นสว่างต้องเข้มขึ้น */
+  --warn-text: #fab219;
+}
+
+html[data-theme="light"] {
+  /* ถ่างระดับสีให้ต่างกันชัด 3 ชั้น: พื้นหน้า(เทาอุ่น) < กล่องย่อย < การ์ด(ขาว) */
+  --tw-page: 235 235 235; /* #e5e3db — พื้นหน้าเทาอุ่นเข้มขึ้น ให้การ์ดลอยเด่น */
+  --tw-surface: 253 253 251; /* #fdfdfb — การ์ดเกือบขาว */
+  --tw-surface2: 245 245 245; /* #f1efe7 — กล่องย่อยในการ์ด (inset) */
+  --tw-ink: 11 11 11;
+  --tw-ink2: 74 73 70; /* #4a4946 — เข้มขึ้นเล็กน้อยให้อ่านชัด */
+  --tw-muted: 122 120 114; /* #7a7872 */
+  --tw-grid: 214 212 203; /* #d6d4cb — เส้นตารางเข้มขึ้น */
+  --tw-line: 11 11 11;
+
+  --tw-s1: 42 120 214; /* #2a78d6 */
+  --tw-s2: 27 175 122; /* #1baf7a */
+  --tw-s3: 237 161 0; /* #eda100 */
+  --tw-s5: 74 58 167; /* #4a3aa7 */
+
+  --border: rgb(var(--tw-line) / 0.14); /* เส้นขอบชัดขึ้นบนพื้นสว่าง */
+  --baseline: #ffffff;
+  --warn-text: #8a5c00;
+
+  /* scrollbar พื้นหลังสีขาว + thumb เทาอ่อนให้ยังเห็นได้บนพื้นขาว */
+  --scrollbar-track: #ffffff;
+  --scrollbar-thumb: #c3c2b7;
+}
+
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+body {
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+/* ===== การ์ดมาตรฐาน ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+/* เงาเบาๆ ในธีมสว่าง ช่วยให้การ์ดลอยเหนือพื้นหน้า (ธีมมืดใช้คอนทราสต์พื้นผิวแทน) */
+html[data-theme="light"] .card {
+  box-shadow:
+    0 1px 2px rgba(11, 11, 11, 0.04),
+    0 2px 6px rgba(11, 11, 11, 0.05);
+}
+.card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.card-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ===== ป้ายสถานะ ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.badge-good {
+  color: #7ee07e;
+  background: rgba(12, 163, 12, 0.12);
+  border-color: rgba(12, 163, 12, 0.35);
+}
+.badge-warn {
+  color: #fab219;
+  background: rgba(250, 178, 25, 0.1);
+  border-color: rgba(250, 178, 25, 0.35);
+}
+.badge-serious {
+  color: #ec835a;
+  background: rgba(236, 131, 90, 0.1);
+  border-color: rgba(236, 131, 90, 0.35);
+}
+.badge-crit {
+  color: #e66767;
+  background: rgba(208, 59, 59, 0.12);
+  border-color: rgba(208, 59, 59, 0.4);
+}
+.badge-info {
+  color: var(--ink-2);
+  background: rgb(var(--tw-line) / 0.06);
+  border-color: rgb(var(--tw-line) / 0.15);
+}
+
+/* ป้ายสถานะเวอร์ชันธีมสว่าง — ข้อความเข้มขึ้นให้อ่านออกบนพื้นสว่าง */
+html[data-theme="light"] .badge-good {
+  color: #006300;
+  background: rgba(12, 163, 12, 0.1);
+  border-color: rgba(12, 163, 12, 0.35);
+}
+html[data-theme="light"] .badge-warn {
+  color: #8a5c00;
+  background: rgba(237, 161, 0, 0.14);
+  border-color: rgba(201, 133, 0, 0.45);
+}
+html[data-theme="light"] .badge-serious {
+  color: #9c3d15;
+  background: rgba(236, 131, 90, 0.14);
+  border-color: rgba(236, 131, 90, 0.5);
+}
+html[data-theme="light"] .badge-crit {
+  color: #a32424;
+  background: rgba(208, 59, 59, 0.1);
+  border-color: rgba(208, 59, 59, 0.4);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  display: inline-block;
+  flex: none;
+}
+
+/* ===== มิเตอร์ (แถบระดับ) ===== */
+.meter {
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--grid);
+  overflow: hidden;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 9999px;
+}
+
+/* ===== แผนที่ Leaflet ===== */
+#map {
+  background: var(--surface-2);
+}
+.leaflet-container {
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--surface-2);
+  color: var(--ink-2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.leaflet-popup-content .popup-title {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.leaflet-popup-close-button {
+  color: var(--muted) !important;
+}
+.leaflet-control-zoom a {
+  background: var(--surface-2) !important;
+  color: var(--ink-2) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-control-attribution {
+  background: rgb(var(--tw-page) / 0.7) !important;
+  color: var(--muted) !important;
+  font-size: 9px;
+}
+.leaflet-control-attribution a {
+  color: var(--muted) !important;
+}
+
+/* ป้ายชื่อโซนคาดการณ์น้ำท่วม (แสดงถาวรกลาง polygon) */
+.zone-label {
+  background: rgb(var(--tw-surface) / 0.85);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  box-shadow: none;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+.zone-label::before {
+  display: none; /* ไม่ต้องมีหางลูกศรของ tooltip */
+}
+
+/* หมุดวงกลมสถานะวิกฤต — กะพริบเบาๆ */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(208, 59, 59, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(208, 59, 59, 0);
+  }
+}
+.marker-critical {
+  animation: pulse-ring 1.6s ease-out infinite;
+  border-radius: 9999px;
+}
+
+/* หมุดอาคาร (div icon) */
+.bld-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 600;
+  border: 2px solid var(--surface);
+  font-size: 10px;
+}
+
+/* ปุ่มสลับชั้นข้อมูลบนแผนที่ */
+.layer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  color: var(--ink-2);
+  background: var(--surface-2);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    opacity 0.15s,
+    border-color 0.15s;
+}
+.layer-chip[data-off="true"] {
+  opacity: 0.4;
+}
+.layer-chip:hover {
+  border-color: rgb(var(--tw-line) / 0.3);
+}
+
+/* ===== แถบสลับหน้า (top nav) ===== */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.4rem;
+  color: var(--muted);
+  transition:
+    color 0.15s,
+    background-color 0.15s;
+}
+.nav-link:hover {
+  color: var(--ink);
+}
+.nav-link.active {
+  color: var(--ink);
+  background: rgb(var(--tw-s1) / 0.16);
+  box-shadow: inset 0 0 0 1px rgb(var(--tw-s1) / 0.35);
+}
+
+/* ปุ่มสลับธีม */
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--ink-2);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+.theme-btn:hover {
+  border-color: rgb(var(--tw-line) / 0.3);
+  color: var(--ink);
+}
+
+/* ===== ตาราง ===== */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.tbl th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.68rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--grid);
+  white-space: nowrap;
+}
+.tbl td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--grid);
+  color: var(--ink-2);
+}
+.tbl tbody tr:hover {
+  background: rgb(var(--tw-line) / 0.03);
+  cursor: pointer;
+}
+.tbl .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.tbl th.num {
+  text-align: right;
+}
+
+/* ===== Scrollbar ของ feed ===== */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 9999px;
+}
+
+/* ===== Modal ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===== กรอบ AI ตรวจจับวัตถุบนจอ CCTV หลัก (มุมวงเล็บ 4 มุม) ===== */
+/* สีส้มคงที่ทุกธีม — วางทับวิดีโอซึ่งพื้นหลังไม่ขึ้นกับธีม */
+.cw-corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-style: solid;
+  border-color: #f97316;
+  border-radius: 2px;
+}

@@ -1,0 +1,98 @@
+{
+  "updatedAt": "2026-07-13T09:30:00+07:00",
+  "sensors": [
+    {
+      "id": "WQ-001",
+      "name": "จุดรับน้ำดิบ คลองเชียงราก",
+      "type": "water_quality",
+      "lat": 13.9905,
+      "lng": 100.5478,
+      "status": "normal",
+      "readings": { "ph": 7.2, "do": 6.4, "turbidity": 8.5, "conductivity": 412, "temperature": 29.4 },
+      "wqi": 84,
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "wqi": [86, 85, 85, 84, 83, 84, 84] },
+      "lastUpdate": "2026-07-13T09:28:00+07:00"
+    },
+    {
+      "id": "WQ-002",
+      "name": "โรงผลิตน้ำประปา (ขาออก)",
+      "type": "water_quality",
+      "lat": 13.9889,
+      "lng": 100.5512,
+      "status": "normal",
+      "readings": { "ph": 7.4, "do": 7.1, "turbidity": 0.6, "conductivity": 285, "temperature": 28.8 },
+      "wqi": 95,
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "wqi": [94, 95, 95, 96, 95, 95, 95] },
+      "lastUpdate": "2026-07-13T09:29:00+07:00"
+    },
+    {
+      "id": "WQ-003",
+      "name": "บ่อบำบัดน้ำเสียส่วนกลาง (ขาออก)",
+      "type": "water_quality",
+      "lat": 13.9768,
+      "lng": 100.5629,
+      "status": "warning",
+      "readings": { "ph": 6.6, "do": 3.1, "turbidity": 22.4, "conductivity": 690, "temperature": 30.6 },
+      "wqi": 58,
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "wqi": [71, 69, 66, 63, 61, 59, 58] },
+      "lastUpdate": "2026-07-13T09:27:00+07:00"
+    },
+    {
+      "id": "WQ-004",
+      "name": "จุดตรวจน้ำรีไซเคิล (Reuse)",
+      "type": "water_quality",
+      "lat": 13.9808,
+      "lng": 100.5555,
+      "status": "normal",
+      "readings": { "ph": 7.0, "do": 5.8, "turbidity": 2.1, "conductivity": 350, "temperature": 29.0 },
+      "wqi": 88,
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "wqi": [87, 88, 88, 89, 88, 88, 88] },
+      "lastUpdate": "2026-07-13T09:26:00+07:00"
+    },
+    {
+      "id": "WL-101",
+      "name": "ประตูน้ำเหนือ คลองระบายน้ำหลัก",
+      "type": "water_level",
+      "lat": 13.9932,
+      "lng": 100.5581,
+      "status": "normal",
+      "readings": { "waterLevel": 2.10, "floodThreshold": 3.50, "flowRate": 4.2 },
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "waterLevel": [1.92, 1.95, 1.98, 2.00, 2.03, 2.07, 2.10] },
+      "lastUpdate": "2026-07-13T09:30:00+07:00"
+    },
+    {
+      "id": "WL-102",
+      "name": "คลองระบายน้ำหลัก กลางเขต",
+      "type": "water_level",
+      "lat": 13.9846,
+      "lng": 100.5602,
+      "status": "warning",
+      "readings": { "waterLevel": 2.78, "floodThreshold": 3.40, "flowRate": 5.6 },
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "waterLevel": [2.35, 2.41, 2.48, 2.55, 2.63, 2.71, 2.78] },
+      "lastUpdate": "2026-07-13T09:30:00+07:00"
+    },
+    {
+      "id": "WL-103",
+      "name": "จุดระบายออก คลองเชียงรากใต้",
+      "type": "water_level",
+      "lat": 13.9741,
+      "lng": 100.5525,
+      "status": "critical",
+      "readings": { "waterLevel": 3.05, "floodThreshold": 3.30, "flowRate": 6.8 },
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "waterLevel": [2.42, 2.52, 2.63, 2.74, 2.86, 2.96, 3.05] },
+      "lastUpdate": "2026-07-13T09:30:00+07:00"
+    },
+    {
+      "id": "WS-201",
+      "name": "ถังน้ำใสหอสูง (จ่ายโซน A-C)",
+      "type": "combined",
+      "lat": 13.9862,
+      "lng": 100.5495,
+      "status": "normal",
+      "readings": { "ph": 7.3, "do": 6.9, "turbidity": 0.4, "conductivity": 280, "temperature": 28.5, "waterLevel": 8.4, "tankCapacity": 10.0 },
+      "wqi": 96,
+      "history": { "labels": ["21:00","23:00","01:00","03:00","05:00","07:00","09:00"], "waterLevel": [9.1, 8.9, 8.8, 8.7, 8.6, 8.5, 8.4] },
+      "lastUpdate": "2026-07-13T09:29:00+07:00"
+    }
+  ]
+}

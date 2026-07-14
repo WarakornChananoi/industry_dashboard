@@ -1,0 +1,96 @@
+{
+  "updatedAt": "2026-07-13T09:30:00+07:00",
+  "model": "AquaSentinel Anomaly Detection v1.8",
+  "scannedSystems": ["IoT Sensors", "SCADA/Pump", "Billing Meters", "Network"],
+  "events": [
+    {
+      "id": "AN-2607",
+      "timestamp": "2026-07-13T08:52:00+07:00",
+      "system": "SCADA/Pump",
+      "severity": "critical",
+      "title": "ปั๊ม P-03B แรงสั่นสะเทือนผิดปกติ",
+      "description": "รูปแบบการสั่นสะเทือนเบี่ยงเบนจาก baseline 4.7σ คาดว่าลูกปืนเริ่มเสียหาย ระบบสั่งหยุดปั๊มอัตโนมัติและสลับไป P-03C",
+      "confidence": 0.94,
+      "status": "active",
+      "refId": "PS-03",
+      "lat": 13.9738,
+      "lng": 100.5518
+    },
+    {
+      "id": "AN-2606",
+      "timestamp": "2026-07-13T08:15:00+07:00",
+      "system": "IoT Sensors",
+      "severity": "critical",
+      "title": "ระดับน้ำ WL-103 เพิ่มขึ้นเร็วผิดปกติ",
+      "description": "อัตราการเพิ่มของระดับน้ำ +0.105 ม./ชม. สูงกว่าค่าเฉลี่ยฤดูฝน 2.8 เท่า สอดคล้องกับการคาดการณ์ฝนตกหนัก",
+      "confidence": 0.89,
+      "status": "active",
+      "refId": "WL-103",
+      "lat": 13.9741,
+      "lng": 100.5525
+    },
+    {
+      "id": "AN-2605",
+      "timestamp": "2026-07-13T06:40:00+07:00",
+      "system": "Billing Meters",
+      "severity": "warning",
+      "title": "การใช้น้ำกลางคืนผิดปกติ — ยูเนี่ยนเปเปอร์มิลล์ (B-07)",
+      "description": "มิเตอร์ MTR-1007 มีอัตราการไหลต่อเนื่อง 8.2 ลบ.ม./ชม. ช่วง 01:00-05:00 ทั้งที่โรงงานหยุดกะ อาจมีท่อรั่วภายในอาคาร",
+      "confidence": 0.78,
+      "status": "active",
+      "refId": "B-07",
+      "lat": 13.9765,
+      "lng": 100.5568
+    },
+    {
+      "id": "AN-2604",
+      "timestamp": "2026-07-13T05:20:00+07:00",
+      "system": "IoT Sensors",
+      "severity": "warning",
+      "title": "ค่า DO บ่อบำบัดน้ำเสียต่ำกว่าเกณฑ์",
+      "description": "WQ-003 ค่าออกซิเจนละลายลดลงต่อเนื่อง 6 ชม. (3.1 mg/L) อาจเกิดจากโหลดสารอินทรีย์เกินหรือเครื่องเติมอากาศทำงานไม่เต็มกำลัง",
+      "confidence": 0.86,
+      "status": "acknowledged",
+      "refId": "WQ-003",
+      "lat": 13.9768,
+      "lng": 100.5629
+    },
+    {
+      "id": "AN-2603",
+      "timestamp": "2026-07-13T03:05:00+07:00",
+      "system": "SCADA/Pump",
+      "severity": "warning",
+      "title": "แรงดันโครงข่ายโซน C ลดลงผิดปกติ",
+      "description": "แรงดันปลายสายลดลง 0.4 bar โดยไม่มีการใช้น้ำเพิ่ม สงสัยท่อเมนรั่วบริเวณถนนสาย C-2 ทีมซ่อมบำรุงกำลังตรวจสอบ",
+      "confidence": 0.81,
+      "status": "acknowledged",
+      "refId": "ZONE-C",
+      "lat": 13.9800,
+      "lng": 100.5610
+    },
+    {
+      "id": "AN-2602",
+      "timestamp": "2026-07-12T22:48:00+07:00",
+      "system": "Network",
+      "severity": "info",
+      "title": "PLC sync ล่าช้าชั่วขณะ",
+      "description": "การสื่อสาร PLC-SCADA ล่าช้า 1.8 วินาที เป็นเวลา 3 นาที กลับสู่ปกติแล้ว",
+      "confidence": 0.72,
+      "status": "resolved",
+      "refId": "PLC-MAIN"
+    },
+    {
+      "id": "AN-2601",
+      "timestamp": "2026-07-12T16:30:00+07:00",
+      "system": "IoT Sensors",
+      "severity": "info",
+      "title": "เซนเซอร์ WQ-002 ค่าเบี่ยงเบน (drift)",
+      "description": "ตรวจพบ sensor drift ค่า conductivity ทีมงานสอบเทียบใหม่แล้ว ค่ากลับสู่ปกติ",
+      "confidence": 0.83,
+      "status": "resolved",
+      "refId": "WQ-002",
+      "lat": 13.9889,
+      "lng": 100.5512
+    }
+  ]
+}

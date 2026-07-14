@@ -1,0 +1,88 @@
+<section class="card p-4">
+  <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+    <div>
+      <h2 class="card-title">แผงควบคุมภาพ AI CCTV / LPR (Video Wall)</h2>
+      <p class="card-sub">
+        จอภาพจำลองสัญญาณกล้อง 8 ตัว ผล AI วิเคราะห์ (LPR / นับรถ / ตรวจจับเหตุ)
+        เป็นข้อมูลจำลอง — คลิกชื่อกล้องเพื่อซูมตำแหน่งบนแผนที่
+      </p>
+    </div>
+    <div
+      id="cw-status"
+      class="text-[11px] text-muted flex items-center gap-1.5"
+    ></div>
+  </div>
+
+  <!-- แดชบอร์ดกล้องหลัก: จอ featured + สรุปความปลอดภัย -->
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-3 mb-3">
+    <div class="xl:col-span-2 space-y-3">
+      <!-- จอหลัก (คลิก ‹ › สลับกล้อง, AI ตรวจจับวัตถุ, PTZ) -->
+      <div id="cw-featured"></div>
+      <!-- สุขภาพอุปกรณ์ + แนวโน้มกิจกรรม -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="rounded-xl border border-line/10 bg-surface2 p-3">
+          <h3 class="text-xs font-semibold text-ink mb-2.5">
+            สุขภาพอุปกรณ์ (Devices Health)
+          </h3>
+          <div id="cw-health" class="space-y-2.5"></div>
+        </div>
+        <div
+          class="rounded-xl border border-line/10 bg-surface2 p-3 flex flex-col"
+        >
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-xs font-semibold text-ink">
+              แนวโน้มกิจกรรม (รายสัปดาห์)
+            </h3>
+          </div>
+          <div
+            id="cw-trend-legend"
+            class="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-muted mb-1"
+          ></div>
+          <div class="relative flex-1 min-h-[150px]">
+            <canvas id="cw-trend-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- คอลัมน์ขวา: สรุปความปลอดภัย + การกระจาย alert + ระดับความปลอดภัย -->
+    <div class="space-y-3">
+      <div class="rounded-xl border border-line/10 bg-surface2 p-3">
+        <h3 class="text-xs font-semibold text-ink mb-2.5">
+          สรุปความปลอดภัย (7 วัน)
+        </h3>
+        <div id="cw-summary" class="grid grid-cols-2 gap-2"></div>
+      </div>
+      <div class="rounded-xl border border-line/10 bg-surface2 p-3">
+        <h3 class="text-xs font-semibold text-ink mb-2.5">
+          การกระจายการแจ้งเตือน (30 วัน)
+        </h3>
+        <div class="flex items-center gap-3">
+          <div class="relative w-[130px] h-[130px] shrink-0">
+            <canvas id="cw-donut-chart"></canvas>
+            <div
+              id="cw-donut-center"
+              class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+            ></div>
+          </div>
+          <div id="cw-donut-legend" class="flex-1 space-y-1.5 min-w-0"></div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-line/10 bg-surface2 p-3 pb-4">
+        <h3 class="text-xs font-semibold text-ink mb-0.5">
+          ระดับความปลอดภัยเฉลี่ย
+        </h3>
+        <p class="text-[10px] text-muted mb-2.5">
+          สถานะความปลอดภัยรวมของแต่ละระบบ
+        </p>
+        <div id="cw-seclevel" class="space-y-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ผังกล้อง 8 จอ (2 แถว x 4) -->
+  <div
+    id="cw-grid"
+    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3"
+  ></div>
+</section>

@@ -1,0 +1,143 @@
+{
+  "updatedAt": "2026-07-13T09:30:00+07:00",
+  "hourlyLabels": ["22:00", "23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00"],
+  "sensors": [
+    {
+      "id": "TS-01",
+      "name": "ถ.ติวานนท์ ขาเข้าประตู 1",
+      "lat": 13.9836,
+      "lng": 100.5458,
+      "type": "loop",
+      "typeLabel": "Loop Detector",
+      "road": "ถ.ติวานนท์ (ขาเหนือ)",
+      "direction": "เข้าเขต",
+      "status": "warning",
+      "volumePerHr": 1450,
+      "capacityPerHr": 1600,
+      "avgSpeedKmh": 22,
+      "occupancyPct": 78,
+      "los": "heavy",
+      "hourlyVolume": [420, 300, 180, 120, 90, 80, 150, 480, 1100, 1380, 1450, 1310],
+      "hourlySpeed": [55, 58, 60, 62, 63, 62, 58, 45, 30, 24, 22, 25],
+      "lastUpdate": "2026-07-13T09:29:00+07:00"
+    },
+    {
+      "id": "TS-02",
+      "name": "ถนนสายหลัก ช่วงประตู 1–แยกกลาง",
+      "lat": 13.9841,
+      "lng": 100.551,
+      "type": "radar",
+      "typeLabel": "Radar Sensor",
+      "road": "ถนนสายหลักนิคม",
+      "direction": "ตะวันออก",
+      "status": "warning",
+      "volumePerHr": 980,
+      "capacityPerHr": 1400,
+      "avgSpeedKmh": 34,
+      "occupancyPct": 62,
+      "los": "busy",
+      "hourlyVolume": [260, 190, 110, 70, 50, 45, 90, 310, 720, 940, 980, 870],
+      "hourlySpeed": [58, 60, 62, 64, 64, 63, 60, 52, 40, 36, 34, 37],
+      "lastUpdate": "2026-07-13T09:28:00+07:00"
+    },
+    {
+      "id": "TS-03",
+      "name": "แยกกลางเขต ขาออกทิศใต้",
+      "lat": 13.9825,
+      "lng": 100.5561,
+      "type": "loop",
+      "typeLabel": "Loop Detector",
+      "road": "ถนนสาย B",
+      "direction": "ใต้",
+      "status": "normal",
+      "volumePerHr": 620,
+      "capacityPerHr": 1200,
+      "avgSpeedKmh": 42,
+      "occupancyPct": 38,
+      "los": "free",
+      "hourlyVolume": [180, 130, 80, 50, 35, 30, 60, 200, 430, 560, 620, 540],
+      "hourlySpeed": [60, 62, 63, 64, 65, 64, 62, 56, 48, 44, 42, 45],
+      "lastUpdate": "2026-07-13T09:29:00+07:00"
+    },
+    {
+      "id": "TS-04",
+      "name": "ถนนสายหลัก โซนตะวันออก",
+      "lat": 13.9844,
+      "lng": 100.5605,
+      "type": "bluetooth",
+      "typeLabel": "Bluetooth / Travel-time",
+      "road": "ถนนสายหลักนิคม",
+      "direction": "ตะวันออก",
+      "status": "normal",
+      "volumePerHr": 540,
+      "capacityPerHr": 1400,
+      "avgSpeedKmh": 45,
+      "occupancyPct": 30,
+      "los": "free",
+      "hourlyVolume": [150, 110, 70, 45, 30, 28, 55, 170, 380, 490, 540, 470],
+      "hourlySpeed": [62, 63, 64, 65, 66, 65, 63, 58, 50, 47, 45, 48],
+      "lastUpdate": "2026-07-13T09:27:00+07:00"
+    },
+    {
+      "id": "TS-05",
+      "name": "ประตู 3 — จุดพักคอยรถบรรทุก",
+      "lat": 13.9772,
+      "lng": 100.5563,
+      "type": "radar",
+      "typeLabel": "Radar Sensor",
+      "road": "ถนนสาย B (ขนส่งสินค้า)",
+      "direction": "เข้าเขต",
+      "status": "critical",
+      "volumePerHr": 860,
+      "capacityPerHr": 900,
+      "avgSpeedKmh": 8,
+      "occupancyPct": 92,
+      "los": "jam",
+      "hourlyVolume": [120, 90, 60, 40, 30, 45, 130, 380, 640, 790, 860, 820],
+      "hourlySpeed": [45, 48, 50, 52, 52, 50, 42, 28, 15, 10, 8, 9],
+      "lastUpdate": "2026-07-13T09:30:00+07:00"
+    }
+  ],
+  "roadSegments": [
+    {
+      "id": "SEG-01",
+      "name": "ถ.ติวานนท์ ช่วงหน้าประตู 1",
+      "los": "heavy",
+      "speedKmh": 22,
+      "delayMin": 8,
+      "path": [[13.976, 100.5452], [13.98, 100.5456], [13.9836, 100.5458], [13.988, 100.546], [13.992, 100.5462]]
+    },
+    {
+      "id": "SEG-02",
+      "name": "ถนนสายหลัก ประตู 1 → แยกกลางเขต",
+      "los": "heavy",
+      "speedKmh": 26,
+      "delayMin": 6,
+      "path": [[13.984, 100.5474], [13.9841, 100.551], [13.9843, 100.556]]
+    },
+    {
+      "id": "SEG-03",
+      "name": "ถนนสายหลัก แยกกลาง → แยกตะวันออก",
+      "los": "free",
+      "speedKmh": 45,
+      "delayMin": 0,
+      "path": [[13.9843, 100.556], [13.9844, 100.5605], [13.9845, 100.5642]]
+    },
+    {
+      "id": "SEG-04",
+      "name": "ถนนสาย B แยกกลาง → ประตู 2",
+      "los": "busy",
+      "speedKmh": 34,
+      "delayMin": 3,
+      "path": [[13.9843, 100.556], [13.988, 100.5561], [13.992, 100.5562]]
+    },
+    {
+      "id": "SEG-05",
+      "name": "ถนนสาย B แยกกลาง → ประตู 3 (คิวรถบรรทุก)",
+      "los": "jam",
+      "speedKmh": 8,
+      "delayMin": 15,
+      "path": [[13.9843, 100.556], [13.98, 100.5562], [13.9772, 100.5563], [13.9758, 100.5566]]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<section class="card p-4 flex flex-col">
+  <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+    <div>
+      <h2 class="card-title">ปริมาณน้ำฝนจากสถานีวัด IoT</h2>
+      <p id="rain-updated" class="card-sub">—</p>
+    </div>
+    <select
+      id="rain-gauge-select"
+      class="bg-surface2 border border-line/10 text-ink2 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-s1/60"
+    ></select>
+  </div>
+
+  <!-- สรุปฝนสะสมของสถานีที่เลือก -->
+  <div id="rain-stats" class="grid grid-cols-3 gap-2 mb-3"></div>
+
+  <!-- กราฟฝนรายชั่วโมง 12 ชม. -->
+  <div class="relative h-[170px]">
+    <canvas id="rain-chart"></canvas>
+  </div>
+
+  <!-- ตารางทุกสถานีวัดฝน -->
+  <div class="mt-3 overflow-x-auto">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>สถานี</th>
+          <th class="num">1 ชม.</th>
+          <th class="num">3 ชม.</th>
+          <th class="num">24 ชม.</th>
+          <th>ความแรงฝน</th>
+        </tr>
+      </thead>
+      <tbody id="rain-gauge-table"></tbody>
+    </table>
+  </div>
+</section>

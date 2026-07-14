@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Flood Alert — แผนที่ GIS เฝ้าระวังน้ำท่วม เขตอุตสาหกรรม</title>
+    <script>
+      // ตั้งธีมก่อน render เพื่อไม่ให้หน้ากะพริบ (ค่าที่ผู้ใช้เลือกเก็บใน localStorage)
+      document.documentElement.dataset.theme =
+        localStorage.getItem("dashboard-theme") || "dark";
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // สีทั้งหมดอ้างอิง CSS variables (RGB triplet) เพื่อรองรับการสลับธีม dark/light
+      const twVar = (name) => `rgb(var(--tw-${name}) / <alpha-value>)`;
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              page: twVar("page"),
+              surface: twVar("surface"),
+              surface2: twVar("surface2"),
+              ink: twVar("ink"),
+              ink2: twVar("ink2"),
+              muted: twVar("muted"),
+              grid: twVar("grid"),
+              line: twVar("line"),
+              s1: twVar("s1"),
+              s2: twVar("s2"),
+              s3: twVar("s3"),
+              s5: twVar("s5"),
+              good: twVar("good"),
+              warn: twVar("warn"),
+              serious: twVar("serious"),
+              crit: twVar("crit"),
+            },
+            fontFamily: {
+              sans: [
+                '"Noto Sans Thai"',
+                "system-ui",
+                "-apple-system",
+                '"Segoe UI"',
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-page text-ink font-sans antialiased">
+    <!-- ส่วน Header (แชร์กับหน้าแรก มีแถบสลับหน้าในตัว) -->
+    <div data-include="partials/header.html"></div>
+
+    <main class="max-w-[1600px] mx-auto px-4 py-4 space-y-4">
+      <!-- แถบสถานะการโหลด / ข้อผิดพลาด -->
+      <div
+        id="load-status"
+        class="hidden rounded-xl border border-crit/40 bg-crit/10 px-4 py-3 text-sm text-ink2"
+      ></div>
+
+      <!-- แถบประกาศเตือนภัย + KPI สถานการณ์น้ำท่วม -->
+      <div data-include="partials/flood-banner.html"></div>
+
+      <!-- Widget พยากรณ์ 7 วัน กรมอุตุนิยมวิทยา (เต็มความกว้าง) -->
+      <div data-include="partials/tmd-widget.html"></div>
+      <!-- สภาพอากาศ (กรมอุตุฯ) + ปริมาณฝน IoT + การทำงานเชื่อมโยงของระบบ -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div data-include="partials/weather-panel.html"></div>
+        <div data-include="partials/rain-panel.html"></div>
+        <div
+          class="lg:col-span-2 xl:col-span-1"
+          data-include="partials/linkage-panel.html"
+        ></div>
+      </div>
+
+      <!-- แผนที่ GIS (หลัก) + แผงแจ้งเตือนโซนน้ำท่วม -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div class="xl:col-span-2" data-include="partials/gis-map.html"></div>
+        <div data-include="partials/flood-alert-panel.html"></div>
+      </div>
+
+      <!-- ระดับน้ำ + คาดการณ์ระดับน้ำ (AI) + รายการแจ้งเตือนระดับน้ำ -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div
+          class="xl:col-span-2"
+          data-include="partials/water-level-panel.html"
+        ></div>
+        <div data-include="partials/water-alert-panel.html"></div>
+      </div>
+
+      <footer class="py-6 text-center text-xs text-muted">
+        ระบบบริหารจัดการน้ำส่วนกลาง เขตอุตสาหกรรม · ข้อมูลจำลองเพื่อการสาธิต ·
+        อัปเดตล่าสุด <span id="footer-updated">—</span>
+      </footer>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/components/spark.js"></script>
+    <script src="js/components/themeToggle.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/gisMap.js"></script>
+    <script src="js/components/floodAlertPanel.js"></script>
+    <script src="js/components/waterLevelPanel.js"></script>
+    <script src="js/components/weatherPanel.js"></script>
+    <script src="js/components/rainPanel.js"></script>
+    <script src="js/components/linkagePanel.js"></script>
+    <script src="js/mapMain.js"></script>
+  </body>
+</html>

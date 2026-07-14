@@ -1,0 +1,30 @@
+<section class="card p-4 flex flex-col col-span-1 xl:col-span-2">
+  <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+    <div>
+      <h2 class="card-title">แผนที่จราจรอัจฉริยะ (Smart Traffic GIS)</h2>
+      <p class="card-sub">
+        ความหนาแน่นจราจรเรียลไทม์ (Google Traffic) · กล้อง AI CCTV / LPR ·
+        Sensor จราจร · เส้นทางติดตามรถ — คลิกที่หมุด/เส้นทางเพื่อดูรายละเอียด
+      </p>
+    </div>
+    <!-- สลับแผนที่ฐาน (basemap) -->
+    <div id="tf-basemaps" class="flex items-center gap-1.5"></div>
+  </div>
+
+  <!-- ชั้นข้อมูล (overlay) เปิด/ปิดได้ -->
+  <div id="tf-layers" class="flex flex-wrap gap-1.5 mb-3"></div>
+
+  <div class="relative rounded-xl overflow-hidden border border-line/10">
+    <div id="tf-map" class="h-[520px] xl:h-[640px] w-full"></div>
+    <!-- ป้ายสถานะข้อมูลจราจรเรียลไทม์ -->
+    <div
+      id="tf-live-badge"
+      class="hidden absolute bottom-3 left-3 z-[1000] rounded-lg bg-surface/90 backdrop-blur border border-line/10 px-2.5 py-1.5 text-[11px] text-ink2"
+    ></div>
+  </div>
+
+  <div
+    id="tf-legend"
+    class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted"
+  ></div>
+</section>

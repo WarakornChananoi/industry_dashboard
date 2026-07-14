@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-07-13T09:30:00+07:00",
+  "plc": {
+    "status": "online",
+    "cycleTimeMs": 42,
+    "lastSync": "2026-07-13T09:29:55+07:00",
+    "ioPoints": 1248,
+    "commHealth": 0.998
+  },
+  "waterTreatment": {
+    "productionTodayM3": 18450,
+    "capacityM3PerDay": 26000,
+    "chlorineResidualMgL": 0.85,
+    "backwashCycles": 3,
+    "energyKwhToday": 6120
+  },
+  "pumpStations": [
+    {
+      "id": "PS-01",
+      "name": "สถานีสูบน้ำดิบ",
+      "role": "สูบน้ำดิบเข้าโรงผลิตน้ำประปา",
+      "lat": 13.9918,
+      "lng": 100.5468,
+      "mode": "auto",
+      "status": "normal",
+      "pumps": [
+        { "id": "P-01A", "status": "running", "flowRate": 320, "pressureBar": 2.4, "powerKw": 75, "runtimeHours": 12450, "efficiency": 0.87 },
+        { "id": "P-01B", "status": "running", "flowRate": 315, "pressureBar": 2.3, "powerKw": 74, "runtimeHours": 11890, "efficiency": 0.86 },
+        { "id": "P-01C", "status": "standby", "flowRate": 0, "pressureBar": 0, "powerKw": 0, "runtimeHours": 9870, "efficiency": 0.88 }
+      ]
+    },
+    {
+      "id": "PS-02",
+      "name": "สถานีสูบจ่ายน้ำประปา",
+      "role": "จ่ายน้ำประปาแรงดันสูงเข้าโครงข่ายโซน A-C",
+      "lat": 13.9880,
+      "lng": 100.5520,
+      "mode": "auto",
+      "status": "normal",
+      "pumps": [
+        { "id": "P-02A", "status": "running", "flowRate": 410, "pressureBar": 4.1, "powerKw": 110, "runtimeHours": 15230, "efficiency": 0.84 },
+        { "id": "P-02B", "status": "running", "flowRate": 405, "pressureBar": 4.0, "powerKw": 108, "runtimeHours": 14980, "efficiency": 0.85 },
+        { "id": "P-02C", "status": "standby", "flowRate": 0, "pressureBar": 0, "powerKw": 0, "runtimeHours": 8450, "efficiency": 0.89 }
+      ]
+    },
+    {
+      "id": "PS-03",
+      "name": "สถานีสูบระบายน้ำ (ป้องกันน้ำท่วม)",
+      "role": "พร่องน้ำคลองระบายหลักออกสู่คลองเชียงรากใต้",
+      "lat": 13.9738,
+      "lng": 100.5518,
+      "mode": "manual",
+      "status": "fault",
+      "pumps": [
+        { "id": "P-03A", "status": "running", "flowRate": 980, "pressureBar": 1.8, "powerKw": 185, "runtimeHours": 6740, "efficiency": 0.82 },
+        { "id": "P-03B", "status": "fault", "flowRate": 0, "pressureBar": 0, "powerKw": 0, "runtimeHours": 7120, "efficiency": 0.0, "faultCode": "VIB-HIGH", "faultDesc": "แรงสั่นสะเทือนเกินเกณฑ์ (AI ตรวจพบ)" },
+        { "id": "P-03C", "status": "standby", "flowRate": 0, "pressureBar": 0, "powerKw": 0, "runtimeHours": 5210, "efficiency": 0.86 }
+      ]
+    }
+  ],
+  "valves": [
+    { "id": "GV-N01", "name": "ประตูระบายน้ำเหนือ", "openPercent": 40, "mode": "auto" },
+    { "id": "GV-S01", "name": "ประตูระบายน้ำใต้", "openPercent": 75, "mode": "manual" }
+  ]
+}

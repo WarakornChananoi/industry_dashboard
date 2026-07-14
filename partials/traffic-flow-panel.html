@@ -1,0 +1,23 @@
+<section class="card p-4 flex flex-col">
+  <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+    <div>
+      <h2 class="card-title">ปริมาณจราจรรายชั่วโมง (Sensor)</h2>
+      <p id="tfl-sub" class="card-sub">—</p>
+    </div>
+    <select
+      id="tfl-sensor"
+      class="bg-surface2 border border-line/15 rounded-lg text-xs px-2.5 py-1.5 text-ink outline-none focus:border-s1/60"
+    ></select>
+  </div>
+
+  <!-- กราฟแท่งปริมาณรถ เทียบความจุถนน -->
+  <div class="relative h-[230px] mt-2">
+    <canvas id="tfl-chart"></canvas>
+  </div>
+
+  <!-- ตาราง sensor ทั้งหมด: ความเร็ว / occupancy / LOS -->
+  <div id="tfl-table" class="mt-3 space-y-1.5 flex-1"></div>
+
+  <!-- สรุปภาพรวมจราจรทั้งเขต (จาก sensor ทุกตัว) -->
+  <div id="tfl-summary" class="grid grid-cols-3 gap-2 mt-3"></div>
+</section>

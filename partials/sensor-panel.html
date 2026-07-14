@@ -1,0 +1,27 @@
+<section class="card p-4">
+  <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+    <div>
+      <h2 class="card-title">เซนเซอร์ IoT — คุณภาพน้ำ &amp; ระดับน้ำ</h2>
+      <p class="card-sub">คลิกแถวเพื่อดูตำแหน่งบนแผนที่ · เกณฑ์: pH 6.5–8.5, DO ≥ 4 mg/L, ความขุ่น ≤ 20 NTU</p>
+    </div>
+    <div id="sensor-summary" class="flex gap-2"></div>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>สถานี</th>
+          <th>ประเภท</th>
+          <th class="num">pH</th>
+          <th class="num">DO (mg/L)</th>
+          <th class="num">ความขุ่น (NTU)</th>
+          <th class="num">ระดับน้ำ (ม.)</th>
+          <th>ระดับ/เกณฑ์</th>
+          <th>สถานะ</th>
+          <th>อัปเดต</th>
+        </tr>
+      </thead>
+      <tbody id="sensor-table"></tbody>
+    </table>
+  </div>
+</section>

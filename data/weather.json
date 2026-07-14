@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-07-13T09:00:00+07:00",
+  "source": "กรมอุตุนิยมวิทยา (TMD) · สถานีอุตุนิยมวิทยาปทุมธานี",
+  "current": {
+    "tempC": 30.8,
+    "feelsLikeC": 37.5,
+    "humidityPct": 81,
+    "windKmh": 16,
+    "windDir": "ตะวันตกเฉียงใต้",
+    "pressureHpa": 1003.6,
+    "condition": "thunderstorm",
+    "description": "เมฆมาก มีฝนฟ้าคะนองร้อยละ 70 ของพื้นที่ และมีฝนตกหนักบางแห่ง"
+  },
+  "warnings": [
+    {
+      "id": "TMD-2569-07",
+      "level": "orange",
+      "title": "ประกาศกรมอุตุนิยมวิทยา ฉบับที่ 7/2569",
+      "text": "ร่องมรสุมพาดผ่านภาคกลางตอนล่าง ประกอบกับมรสุมตะวันตกเฉียงใต้กำลังแรง ทำให้ภาคกลางรวมทั้งกรุงเทพฯ และปริมณฑล มีฝนตกหนักถึงหนักมากบางแห่ง ขอให้ระวังอันตรายจากน้ำท่วมฉับพลันและน้ำป่าไหลหลาก ในช่วงวันที่ 13-15 ก.ค. 2569",
+      "issuedAt": "2026-07-13T05:00:00+07:00"
+    }
+  ],
+  "hourly": [
+    { "time": "10:00", "tempC": 31.2, "rainProb": 0.65, "rainMm": 3.2, "condition": "rain" },
+    { "time": "11:00", "tempC": 31.6, "rainProb": 0.60, "rainMm": 2.4, "condition": "rain" },
+    { "time": "12:00", "tempC": 32.1, "rainProb": 0.55, "rainMm": 1.8, "condition": "cloudy" },
+    { "time": "13:00", "tempC": 32.4, "rainProb": 0.62, "rainMm": 2.6, "condition": "rain" },
+    { "time": "14:00", "tempC": 31.8, "rainProb": 0.78, "rainMm": 6.4, "condition": "thunderstorm" },
+    { "time": "15:00", "tempC": 30.6, "rainProb": 0.85, "rainMm": 9.8, "condition": "thunderstorm" },
+    { "time": "16:00", "tempC": 29.8, "rainProb": 0.88, "rainMm": 11.5, "condition": "thunderstorm" },
+    { "time": "17:00", "tempC": 29.2, "rainProb": 0.82, "rainMm": 8.6, "condition": "thunderstorm" }
+  ],
+  "daily": [
+    { "date": "2026-07-13", "label": "วันนี้", "minC": 26, "maxC": 33, "rainProb": 0.85, "condition": "thunderstorm", "description": "ฝนฟ้าคะนอง ฝนตกหนักบางแห่ง" },
+    { "date": "2026-07-14", "label": "พรุ่งนี้", "minC": 25, "maxC": 32, "rainProb": 0.80, "condition": "thunderstorm", "description": "ฝนฟ้าคะนอง ฝนตกหนักถึงหนักมาก" },
+    { "date": "2026-07-15", "label": "พ. 15 ก.ค.", "minC": 25, "maxC": 33, "rainProb": 0.60, "condition": "rain", "description": "ฝนฟ้าคะนองบางแห่ง" }
+  ],
+  "stations": [
+    {
+      "id": "WX-01",
+      "name": "สถานีตรวจอากาศเขตอุตสาหกรรม",
+      "operator": "ระบบ IoT ภายในเขต",
+      "lat": 13.9852,
+      "lng": 100.5528,
+      "tempC": 30.8,
+      "humidityPct": 81,
+      "windKmh": 16,
+      "rain24hMm": 45.6,
+      "condition": "thunderstorm"
+    },
+    {
+      "id": "TMD-PTM",
+      "name": "สถานีอุตุนิยมวิทยาปทุมธานี",
+      "operator": "กรมอุตุนิยมวิทยา",
+      "lat": 14.0155,
+      "lng": 100.5312,
+      "tempC": 30.5,
+      "humidityPct": 83,
+      "windKmh": 18,
+      "rain24hMm": 52.1,
+      "condition": "thunderstorm"
+    },
+    {
+      "id": "TMD-DMK",
+      "name": "สถานีอุตุนิยมวิทยาดอนเมือง",
+      "operator": "กรมอุตุนิยมวิทยา",
+      "lat": 13.9126,
+      "lng": 100.6068,
+      "tempC": 31.4,
+      "humidityPct": 78,
+      "windKmh": 14,
+      "rain24hMm": 38.7,
+      "condition": "rain"
+    }
+  ]
+}

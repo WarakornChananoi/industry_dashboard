@@ -1,0 +1,111 @@
+<header
+  class="sticky top-0 z-[1500] border-b border-line/10 bg-surface/85 backdrop-blur"
+>
+  <div class="max-w-[1600px] mx-auto px-4 h-16 flex items-center gap-3">
+    <div
+      class="w-9 h-9 rounded-lg bg-s1/15 border border-s1/30 flex items-center justify-center"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#3987e5"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 2.7 6.6 9.5a6.5 6.5 0 1 0 10.8 0Z" />
+      </svg>
+    </div>
+    <div>
+      <h1 class="text-sm font-semibold leading-tight">
+        ศูนย์ปฏิบัติการอัจฉริยะ (IOC)
+      </h1>
+      <p class="text-[11px] text-muted leading-tight">เขตอุตสาหกรรมบางกะดี</p>
+    </div>
+
+    <!-- แถบสลับหน้า -->
+    <nav id="main-nav" class="ml-4 flex items-center gap-1 rounded-lg bg-surface2 border border-line/10 p-1">
+      <a href="index.html" data-page="index" class="nav-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/>
+          <rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>
+        </svg>
+        <span class="hidden sm:inline">Smart Water</span><span class="sm:hidden">Water</span>
+      </a>
+      <a href="map.html" data-page="map" class="nav-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 3-6 2v16l6-2 6 2 6-2V3l-6 2-6-2Z"/><path d="M9 3v16M15 5v16"/>
+        </svg>
+        <span class="hidden sm:inline">Smart Flood Alert</span><span class="sm:hidden">Flood</span>
+      </a>
+      <a href="traffic.html" data-page="traffic" class="nav-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 16.5V19a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2.5"/>
+          <path d="M5.5 11 7 6.6A2 2 0 0 1 8.9 5.3h6.2A2 2 0 0 1 17 6.6L18.5 11"/>
+          <path d="M4 11h16a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V12a1 1 0 0 1 1-1Z"/>
+          <path d="M6.5 13.8h.01M17.5 13.8h.01"/>
+        </svg>
+        <span class="hidden sm:inline">Smart Traffic</span><span class="sm:hidden">จราจร</span>
+      </a>
+    </nav>
+
+    <div class="flex-1"></div>
+
+    <div
+      id="header-alert"
+      class="hidden items-center gap-2 rounded-full border border-crit/40 bg-crit/10 px-3 py-1"
+    >
+      <span class="dot bg-crit"></span>
+      <span class="text-xs text-ink2"
+        ><span id="header-alert-count" class="font-semibold text-ink">0</span>
+        การแจ้งเตือนที่ยังไม่ปิด</span
+      >
+    </div>
+
+    <button
+      id="theme-toggle"
+      class="theme-btn"
+      title="สลับธีม มืด/สว่าง"
+      aria-label="สลับธีม มืด/สว่าง"
+    >
+      <svg
+        id="theme-icon-sun"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+        />
+      </svg>
+      <svg
+        id="theme-icon-moon"
+        class="hidden"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+      </svg>
+    </button>
+
+    <div class="text-right hidden sm:block">
+      <div id="header-clock" class="text-sm font-semibold tabular-nums">
+        --:--:--
+      </div>
+      <div id="header-date" class="text-[11px] text-muted">—</div>
+    </div>
+  </div>
+</header>

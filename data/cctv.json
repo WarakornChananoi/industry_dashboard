@@ -1,0 +1,592 @@
+{
+  "updatedAt": "2026-07-13T09:30:00+07:00",
+  "note": "ภาพวิดีโอในผังกล้องเป็นสื่อเสรีจาก Wikimedia Commons (ดู assets/cctv/CREDITS.md) — ตำแหน่ง/ชื่อกล้องและผล AI เป็นข้อมูลจำลองของเขตอุตสาหกรรม",
+  "cameras": [
+    {
+      "id": "CAM-01",
+      "name": "ประตู 1 — แยกติวานนท์ (ทางเข้าหลัก)",
+      "lat": 13.984,
+      "lng": 100.5472,
+      "type": "ai_lpr",
+      "media": "assets/cctv/cam01.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "นับปริมาณรถ",
+        "ตรวจจับอุบัติเหตุ",
+        "ตรวจจับฝ่าฝืนสัญญาณไฟ"
+      ],
+      "vehiclesPerHr": 1380,
+      "avgSpeedKmh": 24,
+      "lprReadsPerHr": 1290,
+      "lprAccuracy": 0.985,
+      "recentPlates": [
+        {
+          "plate": "กจ 7821",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T08:41:00+07:00",
+          "confidence": 0.97,
+          "watch": true
+        },
+        {
+          "plate": "ฮท 4589",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถตู้",
+          "time": "2026-07-13T08:58:00+07:00",
+          "confidence": 0.99,
+          "watch": false
+        },
+        {
+          "plate": "3ขค 2214",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T09:26:00+07:00",
+          "confidence": 0.98,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 56,
+          "y": 38,
+          "w": 26,
+          "h": 30,
+          "label": "รถตู้โดยสาร",
+          "conf": 0.97
+        },
+        {
+          "x": 18,
+          "y": 48,
+          "w": 16,
+          "h": 22,
+          "label": "รถจักรยานยนต์",
+          "conf": 0.91
+        },
+        {
+          "x": 40,
+          "y": 44,
+          "w": 18,
+          "h": 20,
+          "label": "รถยนต์",
+          "conf": 0.95
+        }
+      ]
+    },
+    {
+      "id": "CAM-02",
+      "name": "ประตู 2 — ทางเข้าด้านเหนือ",
+      "lat": 13.992,
+      "lng": 100.5562,
+      "type": "lpr",
+      "media": "assets/cctv/cam02.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "นับปริมาณรถ"
+      ],
+      "vehiclesPerHr": 460,
+      "avgSpeedKmh": 36,
+      "lprReadsPerHr": 448,
+      "lprAccuracy": 0.982,
+      "recentPlates": [
+        {
+          "plate": "1กท 5567",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถกระบะ",
+          "time": "2026-07-13T09:24:00+07:00",
+          "confidence": 0.96,
+          "watch": false
+        },
+        {
+          "plate": "งจ 1102",
+          "province": "นนทบุรี",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T09:27:00+07:00",
+          "confidence": 0.99,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 30,
+          "y": 42,
+          "w": 26,
+          "h": 30,
+          "label": "รถยนต์",
+          "conf": 0.94
+        },
+        {
+          "x": 58,
+          "y": 40,
+          "w": 20,
+          "h": 24,
+          "label": "รถกระบะ",
+          "conf": 0.92
+        }
+      ]
+    },
+    {
+      "id": "CAM-03",
+      "name": "แยกกลางเขต — ถนนสายหลัก",
+      "lat": 13.9843,
+      "lng": 100.556,
+      "type": "ai_cctv",
+      "media": "assets/cctv/cam03.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "นับปริมาณรถ",
+        "ตรวจจับอุบัติเหตุ",
+        "ตรวจจับรถหยุดนิ่งผิดปกติ"
+      ],
+      "vehiclesPerHr": 1040,
+      "avgSpeedKmh": 28,
+      "lprReadsPerHr": 960,
+      "lprAccuracy": 0.978,
+      "recentPlates": [
+        {
+          "plate": "กจ 7821",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T08:47:00+07:00",
+          "confidence": 0.95,
+          "watch": true
+        },
+        {
+          "plate": "ผก 3302",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถกระบะ",
+          "time": "2026-07-13T08:38:00+07:00",
+          "confidence": 0.97,
+          "watch": false
+        },
+        {
+          "plate": "83-1234",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถบรรทุก",
+          "time": "2026-07-13T09:18:00+07:00",
+          "confidence": 0.99,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 44,
+          "y": 40,
+          "w": 24,
+          "h": 28,
+          "label": "รถยนต์",
+          "conf": 0.96
+        },
+        {
+          "x": 14,
+          "y": 46,
+          "w": 20,
+          "h": 24,
+          "label": "รถประจำทาง",
+          "conf": 0.93
+        }
+      ]
+    },
+    {
+      "id": "CAM-04",
+      "name": "แยกตะวันออก — โซนโรงงาน B",
+      "lat": 13.9845,
+      "lng": 100.5642,
+      "type": "ai_cctv",
+      "media": "assets/cctv/cam04.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "นับปริมาณรถ",
+        "ตรวจจับอุบัติเหตุ"
+      ],
+      "vehiclesPerHr": 520,
+      "avgSpeedKmh": 42,
+      "lprReadsPerHr": 495,
+      "lprAccuracy": 0.981,
+      "recentPlates": [
+        {
+          "plate": "กจ 7821",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T08:55:00+07:00",
+          "confidence": 0.96,
+          "watch": true
+        },
+        {
+          "plate": "83-1234",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถบรรทุก",
+          "time": "2026-07-13T09:28:00+07:00",
+          "confidence": 0.98,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 48,
+          "y": 36,
+          "w": 26,
+          "h": 30,
+          "label": "รถยนต์",
+          "conf": 0.95
+        },
+        {
+          "x": 20,
+          "y": 44,
+          "w": 18,
+          "h": 22,
+          "label": "รถกระบะ",
+          "conf": 0.9
+        }
+      ]
+    },
+    {
+      "id": "CAM-05",
+      "name": "ประตู 3 — ขนส่งสินค้า (ด้านใต้)",
+      "lat": 13.9758,
+      "lng": 100.5566,
+      "type": "ai_lpr",
+      "media": "assets/cctv/cam05.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "ชั่งน้ำหนักอัตโนมัติ (WIM)",
+        "ตรวจจับคิวรถสะสม"
+      ],
+      "vehiclesPerHr": 240,
+      "avgSpeedKmh": 12,
+      "lprReadsPerHr": 236,
+      "lprAccuracy": 0.988,
+      "recentPlates": [
+        {
+          "plate": "ผก 3302",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถกระบะ",
+          "time": "2026-07-13T08:30:00+07:00",
+          "confidence": 0.98,
+          "watch": false
+        },
+        {
+          "plate": "70-5566",
+          "province": "พระนครศรีอยุธยา",
+          "vehicleType": "รถบรรทุกสารเคมี",
+          "time": "2026-07-13T08:47:00+07:00",
+          "confidence": 0.99,
+          "watch": false
+        },
+        {
+          "plate": "82-9910",
+          "province": "สมุทรปราการ",
+          "vehicleType": "รถบรรทุก",
+          "time": "2026-07-13T09:22:00+07:00",
+          "confidence": 0.97,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 36,
+          "y": 30,
+          "w": 30,
+          "h": 34,
+          "label": "รถบรรทุกพ่วง",
+          "conf": 0.97
+        },
+        {
+          "x": 62,
+          "y": 48,
+          "w": 18,
+          "h": 20,
+          "label": "รถบรรทุก 6 ล้อ",
+          "conf": 0.94
+        }
+      ]
+    },
+    {
+      "id": "CAM-06",
+      "name": "ลานจอดกลาง — จุดรถรับส่งพนักงาน",
+      "lat": 13.9868,
+      "lng": 100.5526,
+      "type": "ai_cctv",
+      "media": "assets/cctv/featured.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "นับที่จอดว่าง",
+        "ตรวจจับบุคคล/ทรัพย์สิน"
+      ],
+      "vehiclesPerHr": 180,
+      "avgSpeedKmh": 15,
+      "lprReadsPerHr": 172,
+      "lprAccuracy": 0.975,
+      "recentPlates": [
+        {
+          "plate": "ฮท 4589",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถตู้",
+          "time": "2026-07-13T09:12:00+07:00",
+          "confidence": 0.98,
+          "watch": false
+        },
+        {
+          "plate": "ผก 3302",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถกระบะ",
+          "time": "2026-07-13T08:44:00+07:00",
+          "confidence": 0.96,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 26,
+          "y": 34,
+          "w": 44,
+          "h": 40,
+          "label": "รถบัสรับส่งพนักงาน",
+          "conf": 0.96
+        },
+        {
+          "x": 66,
+          "y": 48,
+          "w": 18,
+          "h": 22,
+          "label": "รถยนต์",
+          "conf": 0.93
+        },
+        {
+          "x": 8,
+          "y": 50,
+          "w": 14,
+          "h": 26,
+          "label": "คนเดินเท้า",
+          "conf": 0.9
+        }
+      ]
+    },
+    {
+      "id": "CAM-07",
+      "name": "ประตู 4 — วงเวียนโซนที่พักอาศัย",
+      "lat": 13.9905,
+      "lng": 100.548,
+      "type": "ai_cctv",
+      "media": "assets/cctv/cam07.webm",
+      "status": "online",
+      "aiFeatures": [
+        "นับปริมาณรถ",
+        "ตรวจจับความเร็วเกิน",
+        "ตรวจจับคนเดินข้าม"
+      ],
+      "vehiclesPerHr": 320,
+      "avgSpeedKmh": 30,
+      "lprReadsPerHr": 305,
+      "lprAccuracy": 0.972,
+      "recentPlates": [
+        {
+          "plate": "ขน 8845",
+          "province": "ปทุมธานี",
+          "vehicleType": "รถเก๋ง",
+          "time": "2026-07-13T09:21:00+07:00",
+          "confidence": 0.95,
+          "watch": false
+        },
+        {
+          "plate": "2ฒผ 907",
+          "province": "กรุงเทพมหานคร",
+          "vehicleType": "รถจักรยานยนต์",
+          "time": "2026-07-13T09:25:00+07:00",
+          "confidence": 0.91,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 44,
+          "y": 40,
+          "w": 18,
+          "h": 18,
+          "label": "รถยนต์",
+          "conf": 0.93
+        },
+        {
+          "x": 24,
+          "y": 52,
+          "w": 16,
+          "h": 16,
+          "label": "รถกระบะ",
+          "conf": 0.91
+        }
+      ]
+    },
+    {
+      "id": "CAM-08",
+      "name": "จุดกลับรถ ถ.สายหลัก — โซนคลังสินค้า",
+      "lat": 13.98,
+      "lng": 100.562,
+      "type": "lpr",
+      "media": "assets/cctv/cam08.webm",
+      "status": "online",
+      "aiFeatures": [
+        "LPR อ่านป้ายทะเบียน",
+        "ตรวจจับรถกลับรถผิดจุด"
+      ],
+      "vehiclesPerHr": 410,
+      "avgSpeedKmh": 38,
+      "lprReadsPerHr": 396,
+      "lprAccuracy": 0.98,
+      "recentPlates": [
+        {
+          "plate": "82-9910",
+          "province": "สมุทรปราการ",
+          "vehicleType": "รถบรรทุก",
+          "time": "2026-07-13T09:24:00+07:00",
+          "confidence": 0.98,
+          "watch": false
+        },
+        {
+          "plate": "1ขข 3178",
+          "province": "นนทบุรี",
+          "vehicleType": "รถกระบะ",
+          "time": "2026-07-13T09:29:00+07:00",
+          "confidence": 0.97,
+          "watch": false
+        }
+      ],
+      "aiBoxes": [
+        {
+          "x": 40,
+          "y": 38,
+          "w": 26,
+          "h": 30,
+          "label": "รถบรรทุก",
+          "conf": 0.95
+        },
+        {
+          "x": 16,
+          "y": 46,
+          "w": 18,
+          "h": 22,
+          "label": "รถยนต์",
+          "conf": 0.92
+        }
+      ]
+    }
+  ],
+  "security": {
+    "summary": {
+      "suspiciousEvents": 54,
+      "suspiciousDeltaPct": 10.2,
+      "resolvedIssues": 93,
+      "resolvedDeltaPct": 5.4,
+      "violations": 26,
+      "violationsDeltaPct": -0.8,
+      "systemHealthPct": 82,
+      "systemHealthDeltaPct": 8.6
+    },
+    "weekly": {
+      "labels": [
+        "อา.",
+        "จ.",
+        "อ.",
+        "พ.",
+        "พฤ.",
+        "ศ.",
+        "ส."
+      ],
+      "totalMotion": [
+        46,
+        62,
+        55,
+        78,
+        71,
+        66,
+        74
+      ],
+      "suspicious": [
+        6,
+        11,
+        9,
+        26,
+        13,
+        10,
+        8
+      ]
+    },
+    "alertDist": {
+      "total": 580,
+      "items": [
+        {
+          "label": "ตรวจจับการเคลื่อนไหว",
+          "count": 186
+        },
+        {
+          "label": "ฝ่าฝืนสัญญาณไฟ/เส้นทาง",
+          "count": 128
+        },
+        {
+          "label": "ความเร็วเกินกำหนด",
+          "count": 104
+        },
+        {
+          "label": "รถบัญชีเฝ้าระวัง (LPR)",
+          "count": 81
+        },
+        {
+          "label": "อื่นๆ",
+          "count": 81
+        }
+      ]
+    },
+    "deviceHealth": [
+      {
+        "name": "CAM-01 · ประตู 1 ทางเข้าหลัก",
+        "pct": 88
+      },
+      {
+        "name": "CAM-03 · แยกกลางเขต",
+        "pct": 71
+      },
+      {
+        "name": "CAM-06 · ลานจอดกลาง",
+        "pct": 67
+      },
+      {
+        "name": "ตู้ควบคุมสัญญาณไฟ แยกกลางเขต",
+        "pct": 43
+      },
+      {
+        "name": "Radar Sensor TS-05 ประตู 3",
+        "pct": 32
+      }
+    ],
+    "securityLevel": [
+      {
+        "label": "CAM-01 · ประตู 1",
+        "pct": 72
+      },
+      {
+        "label": "ตู้ควบคุมสัญญาณไฟ",
+        "pct": 64
+      },
+      {
+        "label": "ระบบ LPR ทั้งเขต",
+        "pct": 91
+      },
+      {
+        "label": "ระบบตรวจจับเหตุ AI",
+        "pct": 85
+      },
+      {
+        "label": "Radar Sensor ประตู 3",
+        "pct": 58
+      },
+      {
+        "label": "ระบบเชื่อมต่อศูนย์สั่งการ",
+        "pct": 88
+      }
+    ]
+  }
+}
