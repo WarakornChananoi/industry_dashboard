@@ -8,7 +8,7 @@
     "vehiclesIn24h": 8620,
     "lprReads24h": 15480,
     "watchlistHits24h": 2,
-    "incidentsOpen": 3,
+    "incidentsOpen": 4,
     "camerasOnline": 8,
     "camerasTotal": 8,
     "sensorsOnline": 5,
@@ -85,6 +85,19 @@
       "source": "ai",
       "time": "2026-07-13T09:05:00+07:00",
       "status": "resolved"
+    },
+    {
+      "id": "EV-106",
+      "severity": "warning",
+      "type": "ฝ่าฝืนสัญญาณไฟ",
+      "title": "AI CCTV ตรวจจับรถฝ่าไฟแดง — แยกประตู 1",
+      "detail": "CAM-01 ตรวจจับรถ 2 คันฝ่าสัญญาณไฟแดงช่วง 09:15 น. · บันทึกภาพและป้ายทะเบียนส่งเข้าระบบออกใบสั่งอัตโนมัติแล้ว",
+      "lat": 13.984,
+      "lng": 100.5472,
+      "refId": "CAM-01",
+      "source": "cctv",
+      "time": "2026-07-13T09:15:00+07:00",
+      "status": "active"
     }
   ],
   "signalPlans": [

@@ -1,0 +1,138 @@
+/* ===== โหมดสไลด์นำเสนอ 16:9 =====
+   stage ขนาดคงที่ 1920×1080 แล้วย่อ/ขยายด้วย transform ให้พอดีหน้าจอ
+   → สัดส่วนทุกองค์ประกอบคงที่ ไม่ว่าจอจริงจะเป็นขนาดใด (capture ได้พอดีสไลด์) */
+.slide-viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--page);
+}
+/* จัดกึ่งกลางด้วย translate(-50%,-50%) แล้วค่อย scale จากจุดกึ่งกลาง —
+   ไม่พึ่ง grid/flex centering เพราะกล่อง stage สูงกว่า viewport เบราว์เซอร์จะ
+   สลับไปจัดชิดบน (safe alignment) เองทำให้ตำแหน่งเพี้ยน (บนว่าง/ล่างล้น) */
+.slide-stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  width: 1920px;
+  height: 1080px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 44px 24px;
+  gap: 18px;
+  background: var(--page);
+}
+
+/* ธีมสว่างของหน้าสไลด์ = พื้นหลังขาวล้วน (ตามสไลด์นำเสนอ)
+   การ์ดแยกตัวจากพื้นด้วยเส้นขอบ + เงา */
+html[data-theme="light"] .slide-viewport,
+html[data-theme="light"] .slide-stage {
+  background: #ffffff;
+}
+html[data-theme="light"] .slide-card {
+  border-color: rgb(var(--tw-line) / 0.12);
+}
+
+/* การ์ดบนสไลด์ — มุมโค้งใหญ่ขึ้นกว่า .card เล็กน้อยให้ดูเป็น infographic block */
+.slide-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+html[data-theme="light"] .slide-card {
+  box-shadow:
+    0 1px 2px rgba(11, 11, 11, 0.04),
+    0 3px 10px rgba(11, 11, 11, 0.06);
+}
+
+/* กล่องย่อยในการ์ด (inset) */
+.slide-inset {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* หัวข้อส่วนบนการ์ดสไลด์ */
+.slide-sec-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.slide-sec-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+/* ป้ายกำกับตัวเลขแบบ infographic */
+.slide-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* legend ลอยบนแผนที่ */
+.map-overlay {
+  background: rgb(var(--tw-surface) / 0.88);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+/* แถบนำทางระหว่างสไลด์ — ลอยมุมจอ (นอกเนื้อหา) โปร่งเกือบหมดจนกว่าจะ hover
+   เพื่อไม่ให้ติดมากับภาพ capture */
+.slide-nav {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* ซ่อนสนิทจนกว่าจะ hover — ไม่ให้ติดมากับภาพ capture */
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.slide-nav:hover {
+  opacity: 1;
+}
+.slide-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.slide-nav-btn:hover {
+  color: var(--ink);
+  border-color: rgb(var(--tw-line) / 0.3);
+}
+.slide-nav-btn.active {
+  color: var(--ink);
+  background: rgb(var(--tw-s1) / 0.16);
+  border-color: rgb(var(--tw-s1) / 0.4);
+}
+
+/* แผนที่ในสไลด์ */
+.slide-map {
+  background: var(--surface-2);
+}
+.slide-map .leaflet-container {
+  background: var(--surface-2);
+}

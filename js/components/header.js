@@ -21,6 +21,12 @@ const HeaderComponent = {
       : /map\.html$/i.test(location.pathname) ? 'map' : 'index';
     document.querySelectorAll('#main-nav .nav-link').forEach(a =>
       a.classList.toggle('active', a.dataset.page === page));
+
+    // ปุ่มโหมดสไลด์นำเสนอ — ชี้ไปสไลด์ของหน้าปัจจุบัน
+    const present = document.getElementById('present-link');
+    if (present) present.href = {
+      index: 'slide-water.html', map: 'slide-flood.html', traffic: 'slide-traffic.html'
+    }[page];
   },
 
   _clockStarted: false,

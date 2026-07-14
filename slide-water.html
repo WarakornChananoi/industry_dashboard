@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>สไลด์ 1 — Smart Water · ระบบบริหารจัดการน้ำอัจฉริยะ</title>
+    <script>
+      // หน้าสไลด์ใช้ธีมสว่างพื้นขาวเป็นค่าเริ่มต้น (เหมาะกับใส่สไลด์นำเสนอ)
+      // — override ได้ด้วย ?theme=dark
+      document.documentElement.dataset.theme =
+        new URLSearchParams(location.search).get("theme") || "light";
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/slide.css" />
+    <script>
+      // สีทั้งหมดอ้างอิง CSS variables (RGB triplet) เพื่อรองรับการสลับธีม dark/light
+      const twVar = (name) => `rgb(var(--tw-${name}) / <alpha-value>)`;
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              page: twVar("page"),
+              surface: twVar("surface"),
+              surface2: twVar("surface2"),
+              ink: twVar("ink"),
+              ink2: twVar("ink2"),
+              muted: twVar("muted"),
+              grid: twVar("grid"),
+              line: twVar("line"),
+              s1: twVar("s1"),
+              s2: twVar("s2"),
+              s3: twVar("s3"),
+              s5: twVar("s5"),
+              good: twVar("good"),
+              warn: twVar("warn"),
+              serious: twVar("serious"),
+              crit: twVar("crit"),
+            },
+            fontFamily: {
+              sans: [
+                '"Noto Sans Thai"',
+                "system-ui",
+                "-apple-system",
+                '"Segoe UI"',
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-page text-ink font-sans antialiased overflow-hidden">
+    <div class="slide-viewport">
+      <div id="stage" class="slide-stage">
+        <!-- แถบหัวสไลด์ -->
+        <header class="flex items-center gap-5 shrink-0" id="slide-header"></header>
+
+        <!-- เนื้อหา: แผนที่ซ้าย / infographic ขวา -->
+        <div class="flex-1 grid grid-cols-12 gap-[18px] min-h-0">
+          <!-- คอลัมน์ซ้าย: แผนที่โครงข่ายน้ำ -->
+          <section class="col-span-5 slide-card relative overflow-hidden slide-map">
+            <div id="slide-map" class="absolute inset-0"></div>
+            <div
+              id="map-title"
+              class="map-overlay absolute left-4 top-4 z-[660] px-4 py-3"
+            ></div>
+            <div
+              id="map-legend"
+              class="map-overlay absolute left-4 bottom-4 z-[660] px-4 py-3 space-y-1.5"
+            ></div>
+          </section>
+
+          <!-- คอลัมน์ขวา: KPI + คาดการณ์ AI + SCADA/ผู้ใช้น้ำ -->
+          <section class="col-span-7 flex flex-col gap-[18px] min-h-0">
+            <div id="kpi-row" class="grid grid-cols-4 gap-[18px] shrink-0"></div>
+            <div id="pred-card" class="slide-card flex-1 min-h-0 p-6 flex flex-col"></div>
+            <div class="grid grid-cols-2 gap-[18px] shrink-0">
+              <div id="scada-card" class="slide-card p-6 flex flex-col"></div>
+              <div id="top-card" class="slide-card p-6 flex flex-col"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/components/spark.js"></script>
+    <script src="js/slides/slideCommon.js"></script>
+    <script src="js/slides/slideWater.js"></script>
+  </body>
+</html>
