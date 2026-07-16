@@ -194,7 +194,8 @@ const TrafficMap = {
   buildVehicleLayer(vd) {
     const group = L.layerGroup();
     this.vehicleTracks = {};
-    vd.vehicles.forEach(v => {
+    // ตัดรถบัญชีเฝ้าระวัง (status alert) ออก แสดงเฉพาะรถกองยาน/รถที่ติดตามตามปกติ
+    vd.vehicles.filter(v => v.status !== 'alert').forEach(v => {
       const color = this.vehicleColor(v);
       const latlngs = v.track.map(p => [p.lat, p.lng]);
       const isLpr = v.source === 'lpr';
@@ -257,7 +258,8 @@ const TrafficMap = {
   // ---------- เหตุการณ์ (อุบัติเหตุ / ติดขัด / ฝ่าฝืน) ----------
   buildIncidentLayer(ops) {
     const group = L.layerGroup();
-    ops.events.filter(e => e.status !== 'resolved').forEach(ev => {
+    // เฉพาะเหตุการณ์จราจร/อุบัติเหตุ — ตัดบัญชีเฝ้าระวังออก
+    ops.events.filter(e => e.status !== 'resolved' && e.type !== 'บัญชีเฝ้าระวัง').forEach(ev => {
       const meta = CONFIG.SEVERITY[ev.severity];
       const icon = L.divIcon({
         className: '',
@@ -308,7 +310,7 @@ const TrafficMap = {
       [CONFIG.LOS.free.color, 'คล่องตัว'], [CONFIG.LOS.busy.color, 'ชะลอตัว'],
       [CONFIG.LOS.heavy.color, 'หนาแน่น'], [CONFIG.LOS.jam.color, 'ติดขัดหนัก'],
       [C.s5, 'กล้อง AI CCTV / LPR'], [C.s2, 'Sensor จราจร'],
-      [C.s1, 'เส้นทางรถ (ทึบ=GPS · ประ=LPR)'], [C.crit, 'เหตุการณ์ / รถเฝ้าระวัง']
+      [C.s1, 'เส้นทางรถ (ทึบ=GPS · ประ=LPR)'], [C.crit, 'เหตุการณ์จราจร / อุบัติเหตุ']
     ];
     document.getElementById('tf-legend').innerHTML = items.map(([c, t]) =>
       `<span class="inline-flex items-center gap-1.5"><span class="dot" style="background:${c}"></span>${t}</span>`

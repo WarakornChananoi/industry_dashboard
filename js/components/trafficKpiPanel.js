@@ -1,5 +1,5 @@
 // แบนเนอร์แจ้งเตือน + KPI บริหารจัดการจราจร
-// แบนเนอร์: การแจ้งเตือนบัญชีเฝ้าระวังจาก LPR + สรุปสถานการณ์/การสั่งการจาก AI
+// แบนเนอร์: เหตุการณ์จราจร/อุบัติเหตุที่รุนแรงที่สุด + สรุปสถานการณ์/การสั่งการจาก AI
 const TrafficKpiPanel = {
   init(data) {
     this.data = data;
@@ -8,24 +8,29 @@ const TrafficKpiPanel = {
   },
 
   renderBanner() {
-    const w = this.data.trafficops.watchlistAlert;
+    // เลือกเหตุการณ์จราจร/อุบัติเหตุที่ยังเปิดอยู่และรุนแรงที่สุดมาแสดง (ตัดบัญชีเฝ้าระวังออก)
+    const sevOrder = { critical: 0, serious: 1, warning: 2, info: 3 };
+    const ev = this.data.trafficops.events
+      .filter(e => e.status !== 'resolved' && e.type !== 'บัญชีเฝ้าระวัง')
+      .sort((a, b) => sevOrder[a.severity] - sevOrder[b.severity])[0];
     const s = this.data.trafficops.summary;
     const C = CONFIG.COLORS;
+    const meta = CONFIG.SEVERITY[ev.severity];
     document.getElementById('traffic-banner').innerHTML = `
-      <div class="card border-l-2 p-3.5 flex flex-col md:flex-row gap-3" style="border-left-color:${C.crit}">
+      <div class="card border-l-2 p-3.5 flex flex-col md:flex-row gap-3" style="border-left-color:${meta.color}">
         <div class="flex gap-2.5 items-start md:flex-1">
           <svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none"
-               stroke="${C.crit}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 8.5 15 5l1 3.8-13 3.5Z"/><path d="M8.6 11.2 8 14h8l-.7-4.6"/><path d="M12 14v4M8 21h8"/>
-            <circle cx="18.5" cy="7" r="1" fill="${C.crit}"/>
+               stroke="${meta.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>
+            <path d="M12 9v4M12 17h.01"/>
           </svg>
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-0.5">
-              <span class="text-xs font-semibold text-ink">${Utils.esc(w.title)}</span>
-              <span class="badge badge-crit">บัญชีเฝ้าระวัง</span>
-              <span class="text-[10px] text-muted">ตรวจพบ ${Utils.timeHM(w.issuedAt)} น.</span>
+              <span class="text-xs font-semibold text-ink">${Utils.esc(ev.title)}</span>
+              <span class="badge ${meta.badge}">${Utils.esc(ev.type)}</span>
+              <span class="text-[10px] text-muted">ตรวจพบ ${Utils.timeHM(ev.time)} น.</span>
             </div>
-            <p class="text-[11px] text-ink2 leading-relaxed">${Utils.esc(w.text)}</p>
+            <p class="text-[11px] text-ink2 leading-relaxed">${Utils.esc(ev.detail)}</p>
           </div>
         </div>
         <div class="md:w-[460px] shrink-0 rounded-lg bg-surface2 border border-line/10 p-2.5 flex gap-2.5 items-start">
@@ -97,7 +102,7 @@ const TrafficKpiPanel = {
       {
         label: 'LPR อ่านป้าย 24 ชม.', value: Utils.compact(s.lprReads24h), unit: 'ป้าย', color: C.s5,
         delta: Spark.delta(6.2, 'จากวานนี้', 'good'),
-        sub: `ตรงบัญชีเฝ้าระวัง ${s.watchlistHits24h} คัน`,
+        sub: `อ่านป้ายทะเบียนอัตโนมัติ ${s.camerasOnline} กล้อง AI`,
         chart: Spark.dots(lprHourly, C.s5)
       },
       {
