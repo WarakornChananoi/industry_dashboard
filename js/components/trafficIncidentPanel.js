@@ -12,8 +12,9 @@ const TrafficIncidentPanel = {
 
   init(data) {
     this.data = data;
-    const events = data.trafficops.events;
-    const open = events.filter(e => e.status !== 'resolved').length;
+    // แสดงเฉพาะเหตุการณ์จราจร/อุบัติเหตุ — ตัดข้อมูลรถหาย/รถในบัญชีเฝ้าระวังออก
+    this.events = data.trafficops.events.filter(e => e.type !== 'บัญชีเฝ้าระวัง');
+    const open = this.events.filter(e => e.status !== 'resolved').length;
     document.getElementById('tie-sub').textContent =
       `เปิดอยู่ ${open} เหตุการณ์ · ตรวจจับอัตโนมัติจากกล้อง AI / sensor / GPS`;
     this.renderStats();
@@ -23,7 +24,7 @@ const TrafficIncidentPanel = {
 
   // สรุปจำนวนเหตุการณ์วันนี้ตามความรุนแรง
   renderStats() {
-    const events = this.data.trafficops.events;
+    const events = this.events;
     document.getElementById('tie-stats').innerHTML =
       Object.entries(CONFIG.SEVERITY).map(([key, meta]) => {
         const n = events.filter(e => e.severity === key).length;
@@ -40,7 +41,7 @@ const TrafficIncidentPanel = {
   renderTrend() {
     const C = CONFIG.COLORS;
     const days = ['อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.', 'อา.', 'วันนี้'];
-    const counts = [2, 4, 3, 5, 2, 3, this.data.trafficops.events.length];
+    const counts = [2, 4, 3, 5, 2, 3, this.events.length];
     document.getElementById('tie-trend').innerHTML = `
       <div class="rounded-lg bg-surface2 border border-line/10 p-2.5">
         <div class="flex items-center justify-between mb-1.5">
@@ -56,7 +57,7 @@ const TrafficIncidentPanel = {
 
   renderList() {
     const order = { critical: 0, serious: 1, warning: 2, info: 3 };
-    const events = [...this.data.trafficops.events].sort((a, b) =>
+    const events = [...this.events].sort((a, b) =>
       (a.status === 'resolved') - (b.status === 'resolved') ||
       order[a.severity] - order[b.severity]);
 

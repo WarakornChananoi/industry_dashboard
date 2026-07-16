@@ -391,6 +391,51 @@ html[data-theme="light"] .badge-crit {
   padding: 1rem;
 }
 
+/* ===== แผนผังการไหลของข้อมูลเชื่อมโยง (linkage pipeline) ===== */
+/* ลูกศร chevron ระหว่างขั้นตอน — ไล่จางเป็นจังหวะให้ดูเหมือนข้อมูลไหลผ่าน */
+.flow-conn {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0 1px;
+  color: var(--muted);
+  flex: none;
+}
+.flow-chev {
+  animation: flow-pulse 1.4s ease-in-out infinite;
+}
+.flow-chev:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.flow-chev:nth-child(3) {
+  animation-delay: 0.36s;
+}
+@keyframes flow-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* จุดสัญญาณ "กำลังทำงาน" กะพริบเบาๆ (ใช้ในแถบสถานะ + เหตุการณ์ที่กำลังดำเนินการ) */
+.live-dot {
+  animation: live-blink 1.3s ease-in-out infinite;
+}
+@keyframes live-blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.78);
+  }
+}
+
 /* ===== กรอบ AI ตรวจจับวัตถุบนจอ CCTV หลัก (มุมวงเล็บ 4 มุม) ===== */
 /* สีส้มคงที่ทุกธีม — วางทับวิดีโอซึ่งพื้นหลังไม่ขึ้นกับธีม */
 .cw-corner {

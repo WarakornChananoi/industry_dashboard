@@ -109,6 +109,7 @@ const TrafficMap = {
   // ---------- สภาพถนนตามระดับการให้บริการ (LOS) จาก sensor ----------
   buildSegmentLayer(ts) {
     const group = L.layerGroup();
+    this.segmentLines = {};
     ts.roadSegments.forEach(seg => {
       const meta = CONFIG.LOS[seg.los];
       // เส้นพื้นสีเข้มช่วยให้เส้น LOS อ่านง่ายบนแผนที่ทุกแบบ
@@ -124,6 +125,7 @@ const TrafficMap = {
           ความเร็วเฉลี่ย <b>${seg.speedKmh} กม./ชม.</b> · ความล่าช้า <b>+${seg.delayMin} นาที</b>
         </div>`);
       line.bindTooltip(`${meta.label} · ${seg.speedKmh} กม./ชม.`, { sticky: true });
+      this.segmentLines[seg.id] = line;
     });
     return group;
   },
@@ -320,6 +322,15 @@ const TrafficMap = {
     document.getElementById('tf-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
     this.map.flyToBounds(t.line.getBounds(), { padding: [60, 60], duration: 0.8 });
     setTimeout(() => t.marker.openPopup(), 900);
+  },
+
+  // ซูมไปยังเส้นทางถนน (เรียกจาก VehicleTrackPanel — สภาพการจราจร)
+  focusSegment(segId) {
+    const line = this.segmentLines && this.segmentLines[segId];
+    if (!line) return;
+    document.getElementById('tf-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    this.map.flyToBounds(line.getBounds(), { padding: [80, 80], duration: 0.8 });
+    setTimeout(() => line.openPopup(), 900);
   },
 
   // ซูมไปยังกล้อง (เรียกจาก CctvWall)
